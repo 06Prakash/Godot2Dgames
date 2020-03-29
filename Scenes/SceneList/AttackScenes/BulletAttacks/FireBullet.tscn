@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Attacks/RangedAttacks/FireBullet1/bullet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Attacks/RangedAttacks/FireBullet1/bullet1.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Scripts/Attacks/Bullets/FireBullet.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 15.3015
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="FireBullet" type="Area2D" groups=[
+"Attack",
+]]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="WeaponImage" type="AnimatedSprite" parent="."]
+position = Vector2( -9.32062, -1.43394 )
+frames = SubResource( 2 )
+frame = 1
+
+[node name="DisappearTimer" type="Timer" parent="."]
+[connection signal="area_entered" from="." to="." method="_on_FireBullet_area_entered"]
+[connection signal="timeout" from="DisappearTimer" to="." method="_on_DisappearTimer_timeout"]

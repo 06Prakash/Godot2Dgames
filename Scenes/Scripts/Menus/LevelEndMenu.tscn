@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="LevelEndMenu" type="Node2D"]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1314.0
+margin_bottom = 908.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1314.0
+margin_bottom = 908.0
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/HBoxContainer"]
+margin_bottom = 908.0

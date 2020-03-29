@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Portals/EnemyPortals/DarkPortal1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Portals/EnemyPortals/DarkPortal3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Portals/EnemyPortals/DarkPortal4.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Portals/EnemyPortals/DarkPortal2.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Scripts/Portals/DarkPortals/DarkPortal1.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Attacks/audio/Explosion.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/EnemyScenes/EvilEnemies/MaleZombie.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/EnemyScenes/EvilEnemies/FemaleZombie.tscn" type="PackedScene" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="DarkPortalNode" type="Node2D" groups=[
+"Enemy",
+"EnemyPortals",
+]]
+script = ExtResource( 5 )
+male_zombie = ExtResource( 7 )
+female_zombie = ExtResource( 8 )
+
+[node name="PortalImage" type="AnimatedSprite" parent="."]
+position = Vector2( -2.45547, 0.613853 )
+scale = Vector2( 0.472456, 0.490104 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="EvilSummonTimer" type="Timer" parent="."]
+
+[node name="PortalLifeDeciderTimer" type="Timer" parent="."]
+wait_time = 120.0
+
+[node name="SummoningLocation" type="Position2D" parent="."]
+position = Vector2( 0, 100 )
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+[connection signal="timeout" from="EvilSummonTimer" to="." method="_on_EvilSummonTimer_timeout"]
+[connection signal="timeout" from="PortalLifeDeciderTimer" to="." method="_on_PortalLifeDeciderTimer_timeout"]
+[connection signal="finished" from="Explode" to="." method="_on_Explode_finished"]

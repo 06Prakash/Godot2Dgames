@@ -1,0 +1,268 @@
+[gd_scene load_steps=62 format=2]
+
+[ext_resource path="res://Scenes/SceneList/AttackScenes/SwordSwingAttack.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/PlayerSpeechArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (6).png" type="Texture" id=3]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (8).png" type="Texture" id=4]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (10).png" type="Texture" id=5]
+[ext_resource path="res://Scenes/SceneList/MiscScenes/VirtualJoystickScene.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Popup/StoryAndObjectivePopup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (2).png" type="Texture" id=8]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (3).png" type="Texture" id=9]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (5).png" type="Texture" id=10]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (4).png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Scripts/Heroes/VillageLeader.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Sounds/AttackSounds/Kinfe-Stab-Sound.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (5).png" type="Texture" id=15]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/InformationCanvas.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (1).png" type="Texture" id=17]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (6).png" type="Texture" id=18]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (9).png" type="Texture" id=19]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (7).png" type="Texture" id=20]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (9).png" type="Texture" id=21]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (3).png" type="Texture" id=22]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (7).png" type="Texture" id=23]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Popup/PopupMenu.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (4).png" type="Texture" id=26]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (8).png" type="Texture" id=27]
+[ext_resource path="res://Scenes/SceneList/ItemsScenes/ProgressBar/ProgressBar.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (10).png" type="Texture" id=29]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (5).png" type="Texture" id=30]
+[ext_resource path="res://Assets/HealthAndEnergy/BlueEnergyBall.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (6).png" type="Texture" id=32]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (8).png" type="Texture" id=33]
+[ext_resource path="res://Assets/Heroes/VillageLeader/run/Run (1).png" type="Texture" id=34]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Idle/Idle (3).png" type="Texture" id=35]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Idle/Idle (4).png" type="Texture" id=36]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (4).png" type="Texture" id=37]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (3).png" type="Texture" id=42]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (2).png" type="Texture" id=43]
+[ext_resource path="res://Assets/Heroes/VillageLeader/dead/Dead (1).png" type="Texture" id=44]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (7).png" type="Texture" id=45]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Idle/Idle (2).png" type="Texture" id=49]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (10).png" type="Texture" id=50]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Idle/Idle (1).png" type="Texture" id=51]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (1).png" type="Texture" id=52]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (2).png" type="Texture" id=53]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (9).png" type="Texture" id=54]
+[ext_resource path="res://Assets/Heroes/VillageLeader/jump/Jump (5).png" type="Texture" id=59]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (2).png" type="Texture" id=60]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (6).png" type="Texture" id=61]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (3).png" type="Texture" id=62]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (4).png" type="Texture" id=63]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (9).png" type="Texture" id=64]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (10).png" type="Texture" id=65]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (8).png" type="Texture" id=66]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Attack/Attack (7).png" type="Texture" id=67]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 34 ), ExtResource( 8 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "RunRight",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 43 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 20 ), ExtResource( 4 ), ExtResource( 19 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 49 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 15 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 64 ), ExtResource( 65 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 53 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 59 ), ExtResource( 32 ), ExtResource( 45 ), ExtResource( 33 ), ExtResource( 54 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 30.001, 49.9997 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32.1808, 11.5941 )
+
+[sub_resource type="Animation" id=4]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("VillageLeader:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 3, 4, 5, 6, 7, 8 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("VillageLeader:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Dead" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VillageLeader:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 15 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 64 ), ExtResource( 65 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 37.5778
+height = 33.649
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Hero",
+"Save",
+]]
+collision_mask = 16
+script = ExtResource( 13 )
+MeleeAttackType1 = ExtResource( 1 )
+
+[node name="VillageLeader" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.498951, 0.576207 )
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 1
+speed_scale = 2.0
+playing = true
+
+[node name="WeakAreaCollision" type="CollisionShape2D" parent="."]
+position = Vector2( -9, 8.00002 )
+shape = SubResource( 2 )
+
+[node name="StompingArea" type="Area2D" parent="."]
+
+[node name="StompAttackArea" type="CollisionShape2D" parent="StompingArea"]
+position = Vector2( -10.1797, 53.5945 )
+shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 3400
+limit_bottom = 1100
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+drag_margin_left = 0.0
+drag_margin_right = 0.0
+__meta__ = {
+"_editor_description_": "	"
+}
+
+[node name="SwordAttack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+volume_db = 5.0
+
+[node name="informationLayer" type="CanvasLayer" parent="."]
+
+[node name="InfoNode" parent="informationLayer" instance=ExtResource( 16 )]
+
+[node name="MeleeAttackMaintainingTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="LeaderAnimation" type="AnimationPlayer" parent="."]
+autoplay = "Attack"
+playback_speed = 0.5
+anims/Attack = SubResource( 4 )
+anims/Dead = SubResource( 5 )
+
+[node name="AttackSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 0.773773 )
+scale = Vector2( 0.499, 0.576 )
+frames = SubResource( 6 )
+animation = "Attack"
+speed_scale = 2.0
+
+[node name="SwordRangeArea" type="Area2D" parent="AttackSprite"]
+position = Vector2( 80, 16 )
+scale = Vector2( 2.00401, 1.73611 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackSprite/SwordRangeArea"]
+shape = SubResource( 7 )
+
+[node name="ProgressBar" parent="." instance=ExtResource( 28 )]
+position = Vector2( -35.7995, -74.4629 )
+scale = Vector2( 0.149685, 0.115241 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PopupMenuControl" parent="CanvasLayer" instance=ExtResource( 24 )]
+visible = false
+margin_left = -0.51854
+margin_top = 1.11034
+margin_right = -0.518555
+margin_bottom = 1.11035
+rect_pivot_offset = Vector2( 250, 250 )
+
+[node name="StoryAndObjectivePopup" parent="CanvasLayer" instance=ExtResource( 7 )]
+visible = false
+
+[node name="ProtectionTimer" type="Timer" parent="."]
+
+[node name="ProtectionGlobe" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.25098 )
+position = Vector2( -6.78304, 1.50735 )
+scale = Vector2( 1.39938, 1.51767 )
+texture = ExtResource( 31 )
+
+[node name="Controllers" parent="." instance=ExtResource( 6 )]
+
+[node name="PlayerSpeechArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5.05018, -69.9214 )
+scale = Vector2( 0.998, 1.152 )
+[connection signal="animation_finished" from="VillageLeader" to="." method="_on_BoyAnimation_animation_finished"]
+[connection signal="area_entered" from="StompingArea" to="." method="_on_StompingArea_area_entered"]
+[connection signal="timeout" from="MeleeAttackMaintainingTimer" to="." method="_on_MeleeAttackTimer_timeout"]
+[connection signal="animation_finished" from="LeaderAnimation" to="." method="_on_LeaderAnimation_animation_finished"]
+[connection signal="area_entered" from="AttackSprite/SwordRangeArea" to="." method="_on_SwordRangeArea_area_entered"]
+[connection signal="pressed" from="CanvasLayer/StoryAndObjectivePopup/PopupPanel/VBoxContainer/CenterContainer/NextButtonPopup" to="." method="_on_NextButtonPopup_pressed"]
+[connection signal="timeout" from="ProtectionTimer" to="." method="_on_ProtectionTimer_timeout"]
+[connection signal="pressed" from="Controllers/CanvasLayer/Jump" to="." method="_on_Jump_pressed"]
+[connection signal="released" from="Controllers/CanvasLayer/Jump" to="." method="_on_Jump_released"]
+[connection signal="pressed" from="Controllers/CanvasLayer/Attack" to="." method="_on_Attack_pressed"]
+[connection signal="released" from="Controllers/CanvasLayer/Attack" to="." method="_on_Attack_released"]
+
+[editable path="CanvasLayer/StoryAndObjectivePopup"]
+
+[editable path="Controllers"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ActorScenes/EnemyScenes/BigRoundEnemies.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Scripts/Enemies/BigEnemies/GiantSpider.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/SceneList/AttackScenes/EnemyAttackScenes/StickyLiquid.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_8.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_7.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_9.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_12.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_4.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_5.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_11.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_6.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_10.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_2.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/EnemyScenes/JungleEnemy.tscn" type="PackedScene" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "EndurePain",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 4.0
+} ]
+
+[node name="GiantSpider" instance=ExtResource( 1 )]
+rotation = 0.389208
+scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 2 )
+attack = ExtResource( 3 )
+spiders = ExtResource( 16 )
+
+[node name="AnimatedSprite" parent="." index="0"]
+position = Vector2( 6.29386, -5.03507 )
+rotation = -0.0645772
+scale = Vector2( 2.75, 3.156 )
+frames = SubResource( 1 )
+animation = "EndurePain"
+frame = 2
+playing = true
+
+[node name="ProgressBar" parent="AnimatedSprite" index="1"]
+scale = Vector2( 0.3, 0.1 )
+
+[node name="Exploding" parent="." index="4"]
+visible = true
+
+[node name="RangedAttackSpot" parent="." index="5"]
+visible = false
+
+[node name="Position2D" type="Position2D" parent="." index="6"]
+position = Vector2( -707.427, 42.7978 )
+
+[node name="SpiderSpawning" type="Timer" parent="." index="7"]
+[connection signal="timeout" from="SpiderSpawning" to="." method="_on_SpiderSpawning_timeout"]
+
+[editable path="BurnType1"]

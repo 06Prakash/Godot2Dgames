@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/InteractionScenes/AgniPuthiran.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/HealthAndEnergyPopupInfo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/InteractionScenes/BraveGirl.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Scripts/Menus/PopupMenu.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/ResumeButton.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/Save Button.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/NextStage.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Popup/GameStatusInPopUp.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/RestartButton.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/NonLivingAssets/Buildings/Backgrounds/Margin.png" type="Texture" id=25]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 25 )
+region_rect = Rect2( 0, 0, 368, 285 )
+
+[node name="PopupMenuControl" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.948
+margin_top = 1.948
+margin_right = 1.948
+margin_bottom = 1.948
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="PopupDialog" parent="."]
+visible = true
+margin_left = 33.6002
+margin_top = 19.9502
+margin_right = 1214.6
+margin_bottom = 682.95
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="Popup" instance=ExtResource( 2 )]
+position = Vector2( 511.071, 265.27 )
+
+[node name="ExitButton" parent="Popup" instance=ExtResource( 24 )]
+margin_left = 165.0
+margin_top = 488.0
+margin_right = 365.0
+margin_bottom = 548.0
+rect_min_size = Vector2( 200, 60 )
+
+[node name="RestartButton" parent="Popup" instance=ExtResource( 23 )]
+margin_left = 422.167
+margin_top = 489.217
+margin_right = 662.167
+margin_bottom = 549.217
+rect_min_size = Vector2( 220, 60 )
+
+[node name="Save Button" parent="Popup" instance=ExtResource( 14 )]
+margin_left = 162.608
+margin_top = 309.25
+margin_right = 522.608
+margin_bottom = 371.25
+
+[node name="Resume" parent="Popup" instance=ExtResource( 13 )]
+margin_left = 162.633
+margin_top = 394.624
+margin_right = 522.633
+margin_bottom = 454.624
+
+[node name="NextStageButton" parent="Popup" instance=ExtResource( 15 )]
+margin_left = 713.068
+margin_top = 485.791
+margin_right = 1073.07
+margin_bottom = 545.791
+custom_colors/font_color = Color( 0.196078, 0.768627, 0.227451, 1 )
+
+[node name="GameStatus" parent="Popup" instance=ExtResource( 16 )]
+position = Vector2( 507.032, 124.366 )
+
+[node name="AgniPuthiran" parent="Popup" instance=ExtResource( 1 )]
+position = Vector2( 269.814, 183.896 )
+
+[node name="AnimatedSprite" parent="Popup/AgniPuthiran" index="0"]
+position = Vector2( 1.50732, 4.52203 )
+frame = 2
+playing = true
+
+[node name="Pointer" parent="Popup/AgniPuthiran/AnimatedSprite" index="0"]
+frame = 1
+
+[node name="BraveGirl" parent="Popup" instance=ExtResource( 3 )]
+position = Vector2( 272.829, 182.388 )
+
+[node name="Pointer" parent="Popup/BraveGirl/AnimatedSprite" index="0"]
+frame = 1
+[connection signal="pressed" from="Popup/Save Button" to="Popup/Save Button" method="_on_Save_Button_pressed"]
+[connection signal="pressed" from="Popup/NextStageButton" to="." method="_on_NextStageButton_pressed"]
+
+[editable path="Popup/AgniPuthiran"]
+
+[editable path="Popup/BraveGirl"]

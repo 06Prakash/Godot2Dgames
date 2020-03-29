@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/ScoreScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/CoverScene/FadeIn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/EnergyLevel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Scripts/PlayerInfoScripts/InformationCanvas.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/SceneList/ItemsScenes/AttackInformation/SelectedAttack.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/SurvivalTimerNode.tscn" type="PackedScene" id=6]
+
+[node name="InfoNode" type="Node2D"]
+script = ExtResource( 4 )
+score_scene = ExtResource( 1 )
+energy_scene = ExtResource( 3 )
+selected_attack_scene = ExtResource( 5 )
+survival_timer = ExtResource( 6 )
+
+[node name="InfoLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeIn" parent="InfoLayer" instance=ExtResource( 2 )]
+margin_bottom = 6.10352e-05
+
+[node name="ScorePosition" type="Position2D" parent="InfoLayer"]
+position = Vector2( 396.686, 70 )
+
+[node name="EnergyPosition" type="Position2D" parent="InfoLayer"]
+position = Vector2( 50, 170 )
+
+[node name="SelectedAttackDisplay" type="Position2D" parent="InfoLayer"]
+position = Vector2( 50, 70 )
+
+[node name="SurvivalTimer" type="Position2D" parent="InfoLayer"]
+position = Vector2( 751.574, 70 )
+
+[node name="PlayerSpeechArea" type="RichTextLabel" parent="InfoLayer"]
+margin_left = 31.0
+margin_top = 770.0
+margin_right = 1357.0
+margin_bottom = 925.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="fade_in_finished" from="InfoLayer/FadeIn" to="." method="_on_FadeIn_fade_in_finished"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Attacks/Flames/BurnFlame1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Attacks/Flames/BurnFlame2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Scripts/Attacks/Flames/BurnType1.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 127.805
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "burning",
+"speed": 5.0
+} ]
+
+[node name="BurnType1" type="Area2D"]
+z_index = 1
+collision_mask = 5
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BurnArea" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="FlameBurn" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.851556, 0.962173 )
+frames = SubResource( 2 )
+animation = "burning"
+speed_scale = 5.0
+playing = true
+[connection signal="area_entered" from="." to="." method="_on_BurnType1_area_entered"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/Buttons.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/NonLivingAssets/Items/DefaultRightTouch.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 120, 122 )
+
+[node name="NextStage" instance=ExtResource( 1 )]
+margin_right = 317.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 120, 60 )
+custom_styles/pressed = SubResource( 1 )
+
+[node name="Label" parent="." index="0"]
+margin_right = 139.0
+margin_bottom = 129.0
+custom_colors/font_color = Color( 0.0627451, 0.109804, 0.623529, 1 )
+custom_colors/font_color_shadow = Color( 0.894118, 0.807843, 0.0862745, 1 )
+text = "NEXT STAGE"
+[connection signal="pressed" from="." to="." method="_on_MenuButton_pressed"]

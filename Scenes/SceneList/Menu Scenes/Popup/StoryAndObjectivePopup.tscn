@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/Fonts/RobotoSlab-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/NonLivingAssets/Buildings/Backgrounds/StoryMargin2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Scripts/Menus/Popup.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/NextButtonPopup.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 368, 285 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 42
+outline_color = Color( 0.952941, 0.972549, 0.188235, 1 )
+font_data = ExtResource( 1 )
+
+[node name="StoryAndObjectivePopup" type="Node2D"]
+pause_mode = 2
+position = Vector2( 4.90045, 5.33211 )
+script = ExtResource( 3 )
+
+[node name="PopupPanel" type="PopupDialog" parent="."]
+visible = true
+margin_left = -5.0
+margin_top = 115.0
+margin_right = 1197.0
+margin_bottom = 689.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel"]
+margin_left = 150.0
+margin_top = 109.0
+margin_right = 1052.0
+margin_bottom = 452.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer"]
+margin_top = 111.0
+margin_right = 902.0
+margin_bottom = 168.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.2, 0.184314, 0.862745, 1 )
+custom_colors/font_color_shadow = Color( 0.882353, 0.941176, 0.0745098, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Test"
+autowrap = true
+
+[node name="CenterContainer" type="CenterContainer" parent="PopupPanel/VBoxContainer"]
+margin_top = 172.0
+margin_right = 902.0
+margin_bottom = 232.0
+
+[node name="NextButtonPopup" parent="PopupPanel/VBoxContainer/CenterContainer" instance=ExtResource( 4 )]
+margin_left = 271.0
+margin_right = 631.0
+[connection signal="pressed" from="PopupPanel/VBoxContainer/CenterContainer/NextButtonPopup" to="." method="_on_NextButtonPopup_pressed"]

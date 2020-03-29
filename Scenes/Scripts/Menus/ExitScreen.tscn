@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Fonts/Robotoslab_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Scripts/Menus/ExitScreen.gd" type="Script" id=2]
+
+[node name="ExitScreen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1280.0
+margin_bottom = 720.0
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_left = 339.0
+margin_top = 327.0
+margin_right = 941.0
+margin_bottom = 392.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.615686, 0.745098, 0.2, 1 )
+text = "HOPE TO SEE YOU AGAIN"
+
+[node name="ExitTimer" type="Timer" parent="."]
+[connection signal="timeout" from="ExitTimer" to="." method="_on_ExitTimer_timeout"]

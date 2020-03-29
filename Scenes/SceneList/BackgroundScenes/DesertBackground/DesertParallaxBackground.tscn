@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Tiles/DesertTiles/DesertBackGround.png" type="Texture" id=1]
+
+[node name="DesertParallaxBackground" type="ParallaxBackground"]
+scroll_base_scale = Vector2( 0.5, 0.5 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1270, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 639.121, 405.224 )
+scale = Vector2( 0.993759, 1.23368 )
+texture = ExtResource( 1 )

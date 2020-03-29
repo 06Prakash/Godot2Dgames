@@ -1,0 +1,69 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/StylesMenuItems/Earth3.png" type="Texture" id=1]
+[ext_resource path="res://Assets/StylesMenuItems/Earth8.png" type="Texture" id=2]
+[ext_resource path="res://Assets/StylesMenuItems/Earth7.png" type="Texture" id=3]
+[ext_resource path="res://Assets/StylesMenuItems/Earth9.png" type="Texture" id=4]
+[ext_resource path="res://Assets/StylesMenuItems/Earth6.png" type="Texture" id=5]
+[ext_resource path="res://Assets/StylesMenuItems/Earth4.png" type="Texture" id=6]
+[ext_resource path="res://Assets/StylesMenuItems/Earth5.png" type="Texture" id=7]
+[ext_resource path="res://Assets/StylesMenuItems/Earth1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/StylesMenuItems/Earth2.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/Fonts/RobotoSlab-Bold32.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/StylesMenuItems/AngelWings.png" type="Texture" id=11]
+[ext_resource path="res://Assets/StylesMenuItems/Earth10.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "TitleScreenEntry"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:custom_fonts/normal_font:outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.447059, 0.141176, 0.752941, 1 ), Color( 0.219608, 0.141176, 0.752941, 1 ), Color( 0.105882, 0.792157, 0.101961, 1 ), Color( 0.839216, 0.862745, 0.0784314, 1 ), Color( 0.862745, 0.462745, 0.0784314, 1 ), Color( 0.862745, 0.152941, 0.0784314, 1 ) ]
+}
+
+[node name="Spinning Earth" type="Node2D"]
+position = Vector2( 30.5867, -5.41333 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 385.389, 257.649 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 373.488, 327.361 )
+scale = Vector2( 1.43186, 0.992995 )
+texture = ExtResource( 11 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 158.392
+margin_top = 492.175
+margin_right = 613.392
+margin_bottom = 574.175
+custom_fonts/normal_font = ExtResource( 10 )
+custom_colors/default_color = Color( 0.470588, 0.490196, 0.894118, 1 )
+text = "	ANGEL FROM EARTH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "TitleScreenEntry"
+anims/TitleScreenEntry = SubResource( 2 )

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 117.995, 51.2448 )
+
+[node name="StompingArea" type="Area2D" groups=[
+"stomp_area",
+]]
+
+[node name="StompArea" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0696001, -87.6697 )
+shape = SubResource( 3 )

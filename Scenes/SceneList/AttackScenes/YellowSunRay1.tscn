@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Attacks/RangedAttacks/SunRay1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Scripts/Attacks/YellowSunRay1.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 51.3267, 7.97941 )
+
+[node name="YellowSunRay" type="Area2D" groups=[
+"Attack",
+]]
+z_index = -1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AttackingArea" type="CollisionShape2D" parent="."]
+position = Vector2( -4.17233e-07, 2.1515 )
+shape = SubResource( 1 )
+
+[node name="WeaponImage" type="Sprite" parent="."]
+scale = Vector2( 0.984238, 0.801122 )
+texture = ExtResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_YellowSunRay_area_entered"]

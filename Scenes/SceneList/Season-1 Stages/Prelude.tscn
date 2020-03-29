@@ -1,0 +1,147 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Scripts/AnimationScenes/Prelude.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/SceneList/Towns/SunVillage.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/Fonts/RobotoSlab-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Sounds/Musics/House/House_1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Popup/StoryAndObjectivePopup.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "TitleAnimation"
+length = 14.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("LayerContainer/MainTitle:custom_fonts/normal_font:outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 0.7, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.87451, 0.101961, 0.101961, 1 ), Color( 0.87451, 0.447059, 0.101961, 1 ), Color( 0.831373, 0.87451, 0.101961, 1 ), Color( 0.270588, 0.87451, 0.101961, 1 ), Color( 0.0862745, 0.713726, 0.905882, 1 ), Color( 0.0862745, 0.443137, 0.905882, 1 ), Color( 0.592157, 0.0862745, 0.905882, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LayerContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 7.6, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 100, 35 ), Vector2( 2400, 35 ), Vector2( 100, 35 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LayerContainer/MainTitle:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3, 4.2, 5.1, 5.7, 6.3, 7, 7.6, 8.5, 9.8, 10.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "
+
+
+
+		ANGEL FROM EARTH", "		ANGEL FROM EARTH", "Story
+", "Story
+ScreenPlay
+", "Story
+ScreenPlay
+Dialogues", "Story
+ScreenPlay
+Dialogues
+Developed", "Story
+ScreenPlay
+Dialogues
+Developed
+By", "
+
+
+
+CHANDRA PRAKASH V", "
+
+
+Thanks for all Supporters and Contributers", "
+
+
+Special Thanks to my Wife and Parents", "Thanks for downloading and supporting the game" ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+outline_size = 3
+outline_color = Color( 0.55098, 0.87451, 0.101961, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[node name="Prelude" type="Node2D" groups=[
+"prelude",
+]]
+script = ExtResource( 2 )
+popup_panel = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "TitleAnimation"
+anims/TitleAnimation = SubResource( 1 )
+
+[node name="SunVillage" parent="." instance=ExtResource( 3 )]
+position = Vector2( 330.797, 480.612 )
+
+[node name="LayerContainer" type="Node2D" parent="."]
+position = Vector2( 281.579, 35 )
+z_index = 1
+
+[node name="MainTitle" type="RichTextLabel" parent="LayerContainer"]
+margin_left = -106.0
+margin_top = 224.0
+margin_right = 951.0
+margin_bottom = 843.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.960784, 0.933333, 0.313726, 1 )
+text = "
+
+
+
+		ANGEL FROM EARTH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="LayerContainer/MainTitle"]
+position = Vector2( 432.608, 266.553 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 3400
+limit_bottom = 1100
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="Music" type="AudioStreamPlayer2D" parent="LayerContainer/MainTitle"]
+position = Vector2( -332.632, -69.7464 )
+stream = ExtResource( 5 )
+volume_db = 20.0
+autoplay = true
+
+[node name="CameraController" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="ScriptControlTimer" type="Timer" parent="."]
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 126.718, 119.868 )
+
+[node name="Camera2D" type="Camera2D" parent="Position2D"]
+position = Vector2( 655.286, 356.762 )
+limit_left = 0
+limit_top = 0
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="finished" from="LayerContainer/MainTitle/Music" to="." method="_on_Music_finished"]
+[connection signal="timeout" from="CameraController" to="." method="_on_CameraController_timeout"]
+[connection signal="timeout" from="ScriptControlTimer" to="." method="_on_ScriptControlTimer_timeout"]

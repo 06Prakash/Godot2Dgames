@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/VillageLeader.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sounds/Musics/DnB/DnB_1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/SceneList/PlatformScenes/TropicalPlatform2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/EnemyScenes/GiantSpider.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Scripts/AnimationScenes/Season-1/Stage3.gd" type="Script" id=7]
+
+[node name="Stage3" type="Node2D" groups=[
+"stage",
+]]
+script = ExtResource( 7 )
+
+[node name="TropicalPlatform1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 5.30011, 2.65005 )
+
+[node name="WalkableFloors" parent="TropicalPlatform1" index="0"]
+tile_data = PoolIntArray( 327710, 0, 0, 327719, 0, 0, 524308, 0, 0, 524309, 0, 0, 524324, 0, 0, 589851, 0, 0, 720911, 0, 0, 720913, 0, 0, 720936, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 917534, 1, 0, 917535, 1, 0, 917536, 1, 0, 917537, 1, 0, 917538, 1, 0, 917539, 1, 0, 917540, 1, 0, 917542, 1, 0, 917543, 1, 0, 917544, 1, 0, 917545, 1, 0, 917546, 1, 0, 917547, 1, 0, 917549, 1, 0, 917550, 1, 0, 917551, 1, 0, 917552, 1, 0, 917553, 1, 0, 917554, 1, 0 )
+
+[node name="GiantSpider" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2923.28, 683.519 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 431.561, 809.406 )
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2( 10.3416, -35.3584 )
+stream = ExtResource( 3 )
+
+[editable path="TropicalPlatform1"]

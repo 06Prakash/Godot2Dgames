@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/BraveGirl.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SceneList/PlatformScenes/TropicalPlatForm1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/EnemyScenes/EvilEnemies/FemaleZombie.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Tiles/TropicalAreaTiles/BG/BG.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/EnemyScenes/EvilEnemies/MaleZombie.tscn" type="PackedScene" id=5]
+
+[node name="TestStage" type="Node2D"]
+
+[node name="Player" parent="." groups=[
+"Player",
+] instance=ExtResource( 1 )]
+position = Vector2( 409.207, 780.66 )
+z_index = 1
+
+[node name="BraveGirl" parent="Player" index="0"]
+frame = 0
+
+[node name="TropicalPlatform1" parent="." instance=ExtResource( 2 )]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.6, 0.6 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1000, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 508.123, 499.552 )
+scale = Vector2( 1, 1.33021 )
+texture = ExtResource( 4 )
+
+[node name="FemaleZombie" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1269.19, 673.447 )
+
+[node name="FemaleZombie2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1105.14, 654.02 )
+
+[node name="FemaleZombie3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1707.36, 682.081 )
+
+[node name="FemaleZombie4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1406.42, 629.368 )
+
+[node name="MaleZombie" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1456.98, 720.933 )
+
+[node name="MaleZombie2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2048.4, 707.982 )
+
+[node name="MaleZombie3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1590.8, 654.02 )
+
+[node name="MaleZombie4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1862.77, 695.031 )
+
+[editable path="Player"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/Buttons.tscn" type="PackedScene" id=1]
+
+[node name="GoNextConversation" instance=ExtResource( 1 )]
+custom_colors/font_color = Color( 0.886275, 0.105882, 0.105882, 1 )
+
+[node name="Label" parent="." index="0"]
+custom_colors/font_color = Color( 0.905882, 0.141176, 0.141176, 1 )
+text = "Go on.."
+[connection signal="pressed" from="." to="." method="_on_GoNextConversation_pressed"]

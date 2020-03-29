@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Controllers/Attack.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Controllers/WhiteAttack.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Controllers/Left.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Controllers/WhiteLeft.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Controllers/Right.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Controllers/WhiteRight.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Controllers/Pause.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Controllers/Jump.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Controllers/WhiteJump.png" type="Texture" id=9]
+
+[node name="Controllers" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Jump" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 958.685, 544.481 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 9 )
+
+[node name="Left" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 50.1057, 476.003 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 4 )
+
+[node name="Right" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 242.177, 596.256 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 6 )
+
+[node name="Attack" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 1105.66, 387.482 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+
+[node name="Pause" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 584.565, 551.161 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 7 )

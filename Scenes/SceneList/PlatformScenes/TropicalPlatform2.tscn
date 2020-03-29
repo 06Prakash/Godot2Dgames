@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/SceneList/PlatformScenes/TropicalPlatForm1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SceneList/BackgroundScenes/TropicalBackground/TropicalParallaxBackground.tscn" type="PackedScene" id=2]
+
+[node name="TropicalPlatform1" instance=ExtResource( 1 )]
+
+[node name="WalkableFloors" parent="." index="0"]
+tile_data = PoolIntArray( 524308, 0, 0, 524309, 0, 0, 524319, 0, 0, 524320, 0, 0, 524321, 0, 0, 720911, 0, 0, 720913, 0, 0, 720933, 0, 0, 720934, 0, 0, 720935, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 917534, 1, 0, 917535, 1, 0, 917536, 1, 0, 917537, 1, 0, 917538, 1, 0, 917539, 1, 0, 917540, 1, 0, 917542, 1, 0, 917543, 1, 0, 917544, 1, 0, 917545, 1, 0, 917546, 1, 0, 917547, 1, 0, 917549, 1, 0, 917550, 1, 0, 917551, 1, 0, 917552, 1, 0, 917553, 1, 0, 917554, 1, 0 )
+
+[node name="WaterTerrain" parent="." index="1"]
+tile_data = PoolIntArray( 655411, 0, 0 )
+
+[node name="SkyView" parent="." index="2"]
+tile_data = PoolIntArray(  )
+
+[node name="Walls" parent="." index="3"]
+tile_data = PoolIntArray( 0, 0, 0, 51, 0, 0, 65536, 0, 0, 65587, 0, 0, 131072, 0, 0, 131123, 0, 0, 196608, 0, 0, 196659, 0, 0, 262144, 0, 0, 262195, 0, 0, 327680, 0, 0, 327731, 0, 0, 393216, 0, 0, 393267, 0, 0, 458752, 0, 0, 458775, 0, 0, 458803, 0, 0, 524288, 0, 0, 524339, 0, 0, 589824, 0, 0, 589847, 0, 0, 589875, 0, 0, 655360, 0, 0, 655411, 0, 0, 720896, 0, 0, 720919, 0, 0, 720947, 0, 0, 786432, 0, 0, 786455, 0, 0, 786483, 0, 0, 851968, 0, 0, 852019, 0, 0, 917525, 0, 0, 917526, 0, 0 )
+
+[node name="WalkThoughWalls" parent="." index="4"]
+tile_data = PoolIntArray(  )
+
+[node name="TileMap" parent="." index="5"]
+tile_data = PoolIntArray(  )
+
+[node name="TropicalBackground" parent="." index="6" instance=ExtResource( 2 )]
+scroll_base_scale = Vector2( 0.25, 0.25 )
+
+[node name="Sprite" parent="TropicalBackground/ParallaxLayer" index="0"]
+position = Vector2( 521.36, 500.239 )
+scale = Vector2( 1.03287, 1.33012 )
+
+[editable path="TropicalBackground"]

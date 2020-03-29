@@ -1,0 +1,137 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ItemsScenes/CollectibleScenes/Coins.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SceneList/PlatformScenes/TropicalPlatForm1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SceneList/Portals/DarkPortal1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/VillageLeader.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Tiles/TropicalAreaTiles/BG/BG.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Scripts/AnimationScenes/Season-1/Stage1.gd" type="Script" id=7]
+
+[node name="Stage1" type="Node2D" groups=[
+"stage",
+]]
+script = ExtResource( 7 )
+
+[node name="TropicalPlatform1" parent="." instance=ExtResource( 2 )]
+
+[node name="Coins" parent="." instance=ExtResource( 1 )]
+position = Vector2( 679.178, 715.443 )
+
+[node name="Coins6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1956.5, 839.995 )
+
+[node name="Coins10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1839.9, 680.993 )
+
+[node name="Coins11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2526.25, 821.444 )
+
+[node name="Coins19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3093.36, 431.889 )
+
+[node name="Coins23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2788.61, 837.344 )
+
+[node name="Coins24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3050.96, 826.744 )
+
+[node name="Coins25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3093.36, 662.442 )
+
+[node name="Coins22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2857.51, 662.442 )
+
+[node name="Coins20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2788.61, 508.74 )
+
+[node name="Coins21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2242.7, 519.34 )
+
+[node name="Coins16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2539.51, 670.392 )
+
+[node name="Coins17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2449.4, 466.339 )
+
+[node name="Coins18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2226.8, 694.243 )
+
+[node name="Coins14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2213.55, 845.295 )
+
+[node name="Coins15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2213.55, 845.295 )
+
+[node name="Coins12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2022.75, 498.14 )
+
+[node name="Coins13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1664.99, 506.09 )
+
+[node name="Coins7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1643.79, 826.745 )
+
+[node name="Coins8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1240.99, 832.045 )
+
+[node name="Coins9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 832.88, 832.045 )
+
+[node name="Coins2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1447.19, 691.385 )
+
+[node name="Coins3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2356.89, 799.382 )
+
+[node name="Coins29" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2375.44, 629.78 )
+
+[node name="Coins30" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1447.92, 815.282 )
+
+[node name="Coins28" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1050.42, 831.183 )
+
+[node name="Coins27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 544.26, 836.483 )
+
+[node name="Coins26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1010.67, 497.278 )
+
+[node name="Coins4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 999.335, 691.385 )
+
+[node name="Coins5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 843.883, 517.427 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.6, 0.6 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1000, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 510.796, 520.149 )
+scale = Vector2( 1, 1.33021 )
+texture = ExtResource( 6 )
+
+[node name="DarkPortalNode" parent="." instance=ExtResource( 3 )]
+position = Vector2( 850.793, 701.087 )
+
+[node name="DarkPortalNode4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2022.11, 690.487 )
+
+[node name="DarkPortalNode2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1245.88, 700.464 )
+
+[node name="DarkPortalNode3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1666.22, 693.648 )
+scale = Vector2( -1, 1 )
+
+[node name="ScriptTimer" type="Timer" parent="."]
+
+[node name="Player" parent="." groups=[
+"Player",
+] instance=ExtResource( 4 )]
+position = Vector2( 362.216, 757.91 )
+[connection signal="timeout" from="ScriptTimer" to="." method="_on_ScriptTimer_timeout"]

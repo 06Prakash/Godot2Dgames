@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/SceneList/Season-1 Stages/AnimatedSceneTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/InteractionScenes/AgniPuthiran.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/InteractionScenes/GiantSpider.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SceneList/PlatformScenes/TropicalPlatform2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Scripts/AnimationScenes/Season-1/Stage4Animated.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/SceneList/MiscScenes/ScreenShake.tscn" type="PackedScene" id=6]
+
+[node name="AnimatedStage4" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+
+[node name="ColorRect" parent="ConversationLayer/CanvasLayer" index="1"]
+margin_left = 238.577
+margin_top = 34.493
+margin_right = 1402.58
+margin_bottom = 189.493
+
+[node name="AgniPuthiran" parent="." index="1" instance=ExtResource( 2 )]
+position = Vector2( 495.557, 832.112 )
+scale = Vector2( 0.7, 0.7 )
+z_index = 1
+
+[node name="TropicalPlatform1" parent="." index="2" instance=ExtResource( 4 )]
+
+[node name="WalkableFloors" parent="TropicalPlatform1" index="0"]
+tile_data = PoolIntArray( 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917527, 1, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0 )
+
+[node name="WaterTerrain" parent="TropicalPlatform1" index="1"]
+tile_data = PoolIntArray(  )
+
+[node name="Walls" parent="TropicalPlatform1" index="3"]
+tile_data = PoolIntArray( 0, 0, 0, 30, 0, 0, 65536, 0, 0, 65566, 0, 0, 131072, 0, 0, 131102, 0, 0, 196608, 0, 0, 196638, 0, 0, 262144, 0, 0, 262174, 0, 0, 327680, 0, 0, 327710, 0, 0, 393216, 0, 0, 393246, 0, 0, 458752, 0, 0, 458782, 0, 0, 524288, 0, 0, 524318, 0, 0, 589824, 0, 0, 589854, 0, 0, 655360, 0, 0, 655390, 0, 0, 720896, 0, 0, 720926, 0, 0, 786432, 0, 0, 786462, 0, 0, 851968, 0, 0, 851998, 0, 0, 917525, 0, 0, 917526, 0, 0, 917534, 0, 0 )
+
+[node name="TileMap" parent="TropicalPlatform1" index="5"]
+position = Vector2( -106.002, -45.0507 )
+
+[node name="GiantSpider" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 1163.37, 728.761 )
+rotation = 0.376991
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+position = Vector2( 855.962, 588.308 )
+current = true
+limit_left = 0
+limit_top = 0
+
+[node name="ScreenShake" parent="Camera2D" index="0" instance=ExtResource( 6 )]
+
+[editable path="ConversationLayer"]
+
+[editable path="TropicalPlatform1"]

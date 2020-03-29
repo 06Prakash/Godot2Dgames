@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/Fonts/RobotoSlab-Bold32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Scripts/AnimationScenes/ConversationLayer.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/GoNextConversation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/CoverScene/FadeIn.tscn" type="PackedScene" id=4]
+
+[node name="ConversationLayer" type="Node2D" groups=[
+"conversation",
+]]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeIn" parent="CanvasLayer" instance=ExtResource( 4 )]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = 96.4333
+margin_top = 106.852
+margin_right = 1149.43
+margin_bottom = 261.852
+color = Color( 0.686275, 0.756863, 0.92549, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ConversationWindow" type="RichTextLabel" parent="CanvasLayer/ColorRect"]
+margin_left = 9.0
+margin_top = 6.0
+margin_right = 1041.0
+margin_bottom = 146.0
+custom_fonts/normal_font = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoNextConversation" parent="CanvasLayer/ColorRect" instance=ExtResource( 3 )]
+margin_right = 1054.0
+margin_bottom = 151.0
+
+[node name="ScriptController" type="Timer" parent="."]
+[connection signal="fade_in_finished" from="CanvasLayer/FadeIn" to="." method="_on_FadeIn_fade_in_finished"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/GoNextConversation" to="." method="_on_GoNextConversation_pressed"]
+[connection signal="timeout" from="ScriptController" to="." method="_on_ScriptController_timeout"]

@@ -1,0 +1,148 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Assets/Enemies/Octopus/Octopus_8.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Enemies/Owl/Owl_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Enemies/Octopus/Octopus_5.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Enemies/Owl/Owl_4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Enemies/Lizard/Lizard_1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_8.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_7.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_5.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Enemies/Lizard/Lizard_4.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Enemies/Octopus/Octopus_6.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Enemies/Lizard/Lizard_8.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Enemies/Octopus/Octopus_9.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Enemies/Lizard/Lizard_5.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Enemies/Lizard/Lizard_3.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Enemies/Owl/Owl_3.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_11.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Enemies/Lizard/Lizard_2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Enemies/Octopus/Octopus_7.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Enemies/Lizard/Lizard_7.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_4.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_9.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Enemies/Owl/Owl_9.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Enemies/Lizard/Lizard_6.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_6.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Enemies/Octopus/Octopus_3.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_12.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_2.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Enemies/Octopus/Octopus_4.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Enemies/Spider/Spider_10.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Enemies/Octopus/Octopus_1.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Enemies/Octopus/Octopus_2.png" type="Texture" id=33]
+[ext_resource path="res://Scenes/Scripts/Enemies/Enemy.gd" type="Script" id=34]
+[ext_resource path="res://Scenes/SceneList/AttackScenes/Explosions/Exploding.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/SceneList/AttackScenes/BurnType1.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Scenes/SceneList/AttackScenes/WeakSpots/FireWeakSpot.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Scenes/SceneList/AttackScenes/AttackArea/AttackArea2D.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scenes/SceneList/AttackScenes/AttackArea/StompingArea.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Scenes/SceneList/AttackScenes/AttackArea/RangeAttackSpot.tscn" type="PackedScene" id=40]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 134.805
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 29 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 8 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 23 ), ExtResource( 31 ), ExtResource( 18 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "Spider",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 20 ), ExtResource( 1 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Octopus",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Lizard",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 17 ), ExtResource( 4 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "Owl",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "disappear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[node name="JungleEnemy" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+scale = Vector2( 0.3, 0.3 )
+collision_layer = 5
+collision_mask = 17
+script = ExtResource( 34 )
+
+[node name="EnemyPhysicArea" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Enemies" type="AnimatedSprite" parent="."]
+position = Vector2( 1.07697, -1.07696 )
+scale = Vector2( 1.3, 1.4 )
+frames = SubResource( 2 )
+animation = "Spider"
+
+[node name="BurnType1" parent="." instance=ExtResource( 36 )]
+visible = false
+
+[node name="FlameBurn" parent="BurnType1" index="1"]
+frame = 1
+
+[node name="StompingArea" parent="." instance=ExtResource( 39 )]
+visible = false
+
+[node name="StompArea" parent="StompingArea" index="0"]
+visible = false
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+visible = false
+position = Vector2( 363.717, 0.383671 )
+scale = Vector2( 12.1647, 12.3949 )
+rect = Rect2( -40, -10, 20, 20 )
+process_parent = true
+physics_process_parent = true
+
+[node name="RangeAttackSpot" parent="." groups=[
+"BurnType1",
+] instance=ExtResource( 40 )]
+visible = false
+
+[node name="Exploding" parent="." instance=ExtResource( 35 )]
+visible = false
+
+[node name="FireWeakSpot" parent="." instance=ExtResource( 37 )]
+visible = false
+
+[node name="ArrowHitDisappear" type="AnimationPlayer" parent="."]
+anims/disappear = SubResource( 3 )
+
+[node name="AttackArea2D" parent="." instance=ExtResource( 38 )]
+[connection signal="finished" from="Exploding" to="." method="_on_Exploding_finished"]
+[connection signal="body_entered" from="AttackArea2D" to="." method="_on_AttackArea2D_body_entered"]
+
+[editable path="BurnType1"]
+
+[editable path="StompingArea"]
+
+[editable path="FireWeakSpot"]
+
+[editable path="AttackArea2D"]

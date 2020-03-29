@@ -1,0 +1,143 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Fonts/Robotoslab_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/Robotoslab-Bold42.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/HealthAndEnergy/Thunder1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/NonLivingAssets/Items/Collectibles/Health.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Heroes/VillageLeader/Weapon/Sword.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Scripts/Menus/InfoDisplayPopup.gd" type="Script" id=6]
+[ext_resource path="res://Assets/NonLivingAssets/Items/Collectibles/Coins.png" type="Texture" id=7]
+[ext_resource path="res://Assets/NonLivingAssets/Items/Collectibles/Star.png" type="Texture" id=8]
+[ext_resource path="res://Assets/NonLivingAssets/Items/coin.png" type="Texture" id=9]
+
+[node name="HealthAndEnergyPopup" type="Sprite"]
+script = ExtResource( 6 )
+
+[node name="Health" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+
+[node name="HealthDisplay" type="Label" parent="Health"]
+margin_left = 66.5018
+margin_top = -26.2531
+margin_right = 184.502
+margin_bottom = 30.7469
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.0509804, 0.0823529, 0.423529, 1 )
+custom_colors/font_outline_modulate = Color( 0.247059, 0.662745, 0.729412, 1 )
+custom_colors/font_color_shadow = Color( 0.839216, 0.827451, 0.121569, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Energy" type="Sprite" parent="."]
+position = Vector2( -2, 67 )
+scale = Vector2( 0.914586, 0.685001 )
+texture = ExtResource( 3 )
+
+[node name="EnergyDisplay" type="Label" parent="Energy"]
+anchor_left = -0.168214
+anchor_top = -0.0310607
+anchor_right = -0.168214
+anchor_bottom = -0.0310607
+margin_left = 86.0511
+margin_top = -38.0
+margin_right = 199.051
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.117647, 0.0392157, 0.498039, 1 )
+custom_colors/font_outline_modulate = Color( 0.917647, 0.945098, 0.945098, 1 )
+custom_colors/font_color_shadow = Color( 0.74902, 0.768627, 0.0823529, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="KillCount" type="Sprite" parent="."]
+position = Vector2( 262.788, -0.945724 )
+scale = Vector2( 0.679226, 1 )
+texture = ExtResource( 5 )
+
+[node name="KillCountDisplay" type="Label" parent="KillCount"]
+margin_left = 103.315
+margin_top = -38.863
+margin_right = 274.315
+margin_bottom = 26.137
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.0470588, 0.0705882, 0.54902, 1 )
+custom_colors/font_color_shadow = Color( 0.756863, 0.878431, 0.0588235, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "70 Kills"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CurrentScore" type="Sprite" parent="."]
+position = Vector2( 2.45585, 148.561 )
+texture = ExtResource( 8 )
+
+[node name="CScoreDisplay" type="Label" parent="CurrentScore"]
+margin_left = 70.3237
+margin_top = -21.61
+margin_right = 447.324
+margin_bottom = 43.39
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.145098, 0.141176, 0.568627, 1 )
+custom_colors/font_color_shadow = Color( 0.933333, 0.905882, 0.905882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScore" type="Sprite" parent="."]
+position = Vector2( 259.299, 147.597 )
+texture = ExtResource( 9 )
+
+[node name="HscoreDisplay" type="Label" parent="HighScore"]
+anchor_left = 1.785
+anchor_top = 0.5
+anchor_right = 1.785
+anchor_bottom = 0.5
+margin_left = -43.6083
+margin_top = -60.94
+margin_right = 327.392
+margin_bottom = -2.94
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.145098, 0.141176, 0.568627, 1 )
+custom_colors/font_color_shadow = Color( 0.933333, 0.905882, 0.905882, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "10000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Sprite" parent="."]
+position = Vector2( 247.833, 66.0748 )
+scale = Vector2( 0.914586, 0.789753 )
+texture = ExtResource( 7 )
+
+[node name="CoinsDisplay" type="Label" parent="Coins"]
+margin_left = 86.0511
+margin_top = -38.0
+margin_right = 199.051
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.117647, 0.0392157, 0.498039, 1 )
+custom_colors/font_outline_modulate = Color( 0.917647, 0.945098, 0.945098, 1 )
+custom_colors/font_color_shadow = Color( 0.74902, 0.768627, 0.0823529, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": true
+}

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 123.012
+
+[node name="AttackArea2D" type="Area2D"]
+
+[node name="AttackArea" type="CollisionShape2D" parent="." groups=[
+"enemy",
+]]
+shape = SubResource( 6 )

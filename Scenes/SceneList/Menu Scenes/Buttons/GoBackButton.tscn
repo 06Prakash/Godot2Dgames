@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/SceneList/Menu Scenes/Buttons/Buttons.tscn" type="PackedScene" id=1]
+
+[node name="Go Back" instance=ExtResource( 1 )]
+margin_right = 250.0
+margin_bottom = 83.0
+rect_min_size = Vector2( 250, 60 )
+
+[node name="Label" parent="." index="0"]
+margin_left = 11.6913
+margin_top = 8.35091
+margin_right = 197.691
+margin_bottom = 73.3509
+custom_colors/font_color = Color( 0.133333, 0.145098, 0.764706, 1 )
+custom_colors/font_color_shadow = Color( 0.894118, 0.0862745, 0.105882, 1 )
+text = "Go to Main Menu"

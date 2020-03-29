@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/Fonts/RobotoSlab-Bold32.tres" type="DynamicFont" id=1]
+
+[node name="PlayerSpeechArea" type="Node2D"]
+
+[node name="SpeechLayer" type="RichTextLabel" parent="."]
+margin_left = -215.788
+margin_top = -57.1204
+margin_right = 232.212
+margin_bottom = 71.8796
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0.8, 0.819608, 0.184314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
