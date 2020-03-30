@@ -17,7 +17,8 @@ onready var EnableEnergyAttack = true
 onready var fainted = false
 onready var fainting_animation = $"LeaderAnimation"
 onready var info_node = $"informationLayer/InfoNode"
-onready var sword_attack_area = $"AttackSprite/SwordRangeArea"
+onready var sword_attack_area_1 = $"AttackSprite/SwordRangeArea/CollisionShape2D"
+onready var sword_attack_area_2 = $"AttackSprite/SwordRangeArea2/CollisionShape2D"
 onready var progress_bar = $"ProgressBar"
 onready var protection_globe = $"ProtectionGlobe"
 
@@ -41,7 +42,8 @@ func _ready() -> void:
 	protection_globe.visible = true
 	protected = true
 	$ProtectionTimer.start(5)
-	sword_attack_area.set_deferred("disabled",true)
+	sword_attack_area_1.set_deferred("disabled",true)
+	sword_attack_area_2.set_deferred("disabled",true)
 	speed = Vector2(500.0, 1200.0)
 	if(SaveSystem.loading_from_file):
 		var player_info = load_data()
@@ -87,13 +89,9 @@ func _physics_process(_delta: float) -> void:
 		if(Input.is_action_just_pressed("left")):
 			anim_sprite.flip_h = true
 			attack_sprite.flip_h = true
-			if sword_attack_area.position.x > 0:
-				sword_attack_area.position.x *= -1
 		elif (Input.is_action_just_pressed("right")):
 			anim_sprite.flip_h = false
 			attack_sprite.flip_h = false
-			if sword_attack_area.position.x < 0:
-				sword_attack_area.position.x *= -1
 		elif(Input.is_action_just_pressed("SelectAttack")):
 			attack_selection()
 		# To check whether we are jumping
@@ -142,14 +140,11 @@ func melee_attack():
 			attack_sprite.flip_h = true
 			attack_direction = -1
 			engaged_attack_direction = attack_direction
-			if sword_attack_area.position.x > 0:
-				sword_attack_area.position.x *= -1
+			sword_attack_area_2.set_deferred("disabled",false)
 		else:
 			attack_sprite.flip_h = false
-			if sword_attack_area.position.x < 0:
-				sword_attack_area.position.x *= -1
+			sword_attack_area_1.set_deferred("disabled",false)
 		.use_sword_wave_attack(attack_direction, MeleeAttackType1)
-		sword_attack_area.set_deferred("disabled",false)
 		melee_attack_ended = false
 		$"SwordAttack".play()
 		if((randi()%100) % 5 == 0):
@@ -204,7 +199,7 @@ func _on_StompingArea_area_entered(area: Area2D) -> void:
 		area.get_parent().stomped_hard()
 
 func _on_SwordRangeArea_area_entered(area: Area2D) -> void:
-	if(area.is_in_group("enemy_ranged_attack_spot")):
+	if(area.is_in_group("enemy_ranged_attack_spot") and not (sword_attack_area_1.disabled or sword_attack_area_2.disabled)):
 		area.get_parent().hit_by_sword(area.get_parent().get_can_hurt(), engaged_attack_direction)
 
 func _on_MeleeAttackTimer_timeout() -> void:
@@ -212,13 +207,15 @@ func _on_MeleeAttackTimer_timeout() -> void:
 	attack_sprite.visible = false
 	$PlayerSpeechArea/SpeechLayer.text = ""
 	anim_sprite.visible = true
-	sword_attack_area.set_deferred("disabled",true)
+	sword_attack_area_1.set_deferred("disabled",true)
+	sword_attack_area_2.set_deferred("disabled",true)
 
 func _on_LeaderAnimation_animation_finished(anim_name: String) -> void:
 	if(anim_name == "Attack"):
 		melee_attack_ended = true
 
 func _on_ProtectionTimer_timeout() -> void:
+	$PlayerSpeechArea/SpeechLayer.visible = false
 	protection_globe.visible = false
 	protected = false
 

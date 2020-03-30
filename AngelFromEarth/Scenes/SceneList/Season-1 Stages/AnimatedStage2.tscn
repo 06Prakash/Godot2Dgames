@@ -50,7 +50,6 @@ flip_h = true
 [node name="Pointer" parent="AgniPuthiran/AnimatedSprite" index="0"]
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 
 [node name="BraveGirl" parent="." index="3" instance=ExtResource( 4 )]
 position = Vector2( 725.588, 851.802 )

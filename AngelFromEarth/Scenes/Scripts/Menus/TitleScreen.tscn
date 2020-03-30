@@ -106,7 +106,7 @@ margin_right = 1026.0
 margin_bottom = 630.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
-text = "Version: 1.0.0"
+text = "Version: beta"
 
 [node name="FadeIn" parent="." instance=ExtResource( 7 )]
 visible = false

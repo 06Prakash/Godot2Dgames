@@ -12,6 +12,7 @@ var shake_now_count
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music._stop_all_musics()
 	get_tree().paused = false
 	shake_now_count = 3
 	scripts = [

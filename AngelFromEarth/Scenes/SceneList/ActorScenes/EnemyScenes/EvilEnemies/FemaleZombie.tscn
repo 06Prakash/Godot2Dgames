@@ -48,11 +48,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 35 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 36 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 38 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 23 ), ExtResource( 22 ), ExtResource( 30 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "Idle",
@@ -66,6 +61,11 @@ animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 17 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "Dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 36 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 } ]
 
@@ -93,7 +93,6 @@ scale = Vector2( 0.7, 0.7 )
 [node name="AttackArea2D" type="Area2D" parent="." groups=[
 "EnemyArea",
 ]]
-visible = false
 
 [node name="AttackArea" type="CollisionShape2D" parent="AttackArea2D"]
 position = Vector2( 2.19913, -39.2899 )
@@ -111,7 +110,6 @@ position = Vector2( -6.32611, -23.2579 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="BurnType2" parent="." instance=ExtResource( 40 )]
-visible = false
 
 [node name="FlameBurn" parent="BurnType2" index="0"]
 position = Vector2( 5.0039, -49.5716 )
@@ -124,7 +122,6 @@ position = Vector2( 4.07257, -45.6152 )
 "BurnType2",
 "zombie",
 ] instance=ExtResource( 42 )]
-visible = false
 
 [node name="CollisionShape2D" parent="RangeAttackSpot" index="0"]
 position = Vector2( -2.44354, -48.8707 )

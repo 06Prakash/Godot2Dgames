@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Tree_3.png-f6a9b21ef8a3b8f49dd2a779eaf1dd1c.stex"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 121.175, 28.8392 )
+
+[node name="Tree1" type="StaticBody2D"]
+collision_layer = 17
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 2.39166 )
+texture = SubResource( 2 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PoolVector2Array( -40.6653, 140.935, 64.0551, 137.762, 22.8016, 115.548, 21.2149, 112.375, 21.2149, 113.961, -16.8652, 113.961, -18.4519, 110.788, -15.2786, 112.375 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.604416, -33.4576 )
+shape = SubResource( 1 )
+one_way_collision = true

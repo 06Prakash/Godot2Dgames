@@ -11,10 +11,10 @@
 script = ExtResource( 6 )
 
 [node name="ColorRect" parent="ConversationLayer/CanvasLayer" index="1"]
-margin_left = 205.085
-margin_top = 263.204
-margin_right = 1258.08
-margin_bottom = 418.204
+margin_left = 128.904
+margin_top = 36.0215
+margin_right = 1181.9
+margin_bottom = 191.022
 
 [node name="AgniPuthiran" parent="." index="1" instance=ExtResource( 4 )]
 position = Vector2( 355.105, 800.312 )

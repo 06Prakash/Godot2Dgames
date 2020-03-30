@@ -42,7 +42,7 @@
 [ext_resource path="res://Scenes/SceneList/AttackScenes/AttackArea/RangeAttackSpot.tscn" type="PackedScene" id=40]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 134.805
+radius = 161.425
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -92,7 +92,6 @@ collision_mask = 17
 script = ExtResource( 34 )
 
 [node name="EnemyPhysicArea" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="Enemies" type="AnimatedSprite" parent="."]
@@ -102,19 +101,13 @@ frames = SubResource( 2 )
 animation = "Spider"
 
 [node name="BurnType1" parent="." instance=ExtResource( 36 )]
-visible = false
 
 [node name="FlameBurn" parent="BurnType1" index="1"]
 frame = 1
 
 [node name="StompingArea" parent="." instance=ExtResource( 39 )]
-visible = false
-
-[node name="StompArea" parent="StompingArea" index="0"]
-visible = false
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-visible = false
 position = Vector2( 363.717, 0.383671 )
 scale = Vector2( 12.1647, 12.3949 )
 rect = Rect2( -40, -10, 20, 20 )
@@ -124,13 +117,10 @@ physics_process_parent = true
 [node name="RangeAttackSpot" parent="." groups=[
 "BurnType1",
 ] instance=ExtResource( 40 )]
-visible = false
 
 [node name="Exploding" parent="." instance=ExtResource( 35 )]
-visible = false
 
 [node name="FireWeakSpot" parent="." instance=ExtResource( 37 )]
-visible = false
 
 [node name="ArrowHitDisappear" type="AnimationPlayer" parent="."]
 anims/disappear = SubResource( 3 )

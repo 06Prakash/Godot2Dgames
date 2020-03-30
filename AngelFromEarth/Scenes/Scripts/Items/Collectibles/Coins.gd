@@ -22,6 +22,6 @@ func _on_Coins_body_entered(body: KinematicBody2D) -> void:
 		return
 	if(body.is_in_group("Hero")):
 		animation.play("Fading")
-		var player = get_parent().get_node("Player")
-		player.update_score(my_score)
-		player.update_coin_collection()
+#		var player = get_parent().get_node("Player")
+		body.update_score(my_score)
+		body.update_coin_collection()

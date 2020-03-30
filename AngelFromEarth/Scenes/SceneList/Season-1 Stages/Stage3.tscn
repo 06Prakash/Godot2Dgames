@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/VillageLeader.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Sounds/Musics/DnB/DnB_1.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/SceneList/PlatformScenes/TropicalPlatform2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/SceneList/ActorScenes/EnemyScenes/GiantSpider.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Scripts/AnimationScenes/Season-1/Stage3.gd" type="Script" id=7]
@@ -22,9 +21,5 @@ position = Vector2( 2923.28, 683.519 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 431.561, 809.406 )
-
-[node name="Music" type="AudioStreamPlayer2D" parent="Player"]
-position = Vector2( 10.3416, -35.3584 )
-stream = ExtResource( 3 )
 
 [editable path="TropicalPlatform1"]

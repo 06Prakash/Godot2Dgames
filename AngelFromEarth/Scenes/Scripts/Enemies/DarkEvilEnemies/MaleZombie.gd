@@ -12,9 +12,7 @@ func _ready() -> void:
 	speedScaling =  0.3 * 4
 	_velocity.x = speed.x * speedScaling
 	$"BurnType2".visible = false
-	if((randi()%100) % 5 == 0):
-		zombie_threatening_msg()
-		$"TextTimer".start(4)
+	$"TextTimer".start(4)
 
 func get_can_hurt() -> bool:
 	return can_hurt
@@ -61,7 +59,7 @@ func _on_AttackArea2D_body_entered(body: KinematicBody2D) -> void:
 		return
 	elif body.name != "Player":
 		return
-	get_parent().get_node("Player").reduce_health()
+	body.reduce_health()
 	queue_free()
 
 

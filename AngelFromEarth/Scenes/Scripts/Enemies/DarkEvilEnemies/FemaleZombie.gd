@@ -63,7 +63,7 @@ func _on_AttackArea2D_body_entered(body: KinematicBody2D) -> void:
 	elif body.name != "Player":
 		return
 	else:
-		get_parent().get_node("Player").reduce_health()
+		body.reduce_health()
 		queue_free()
 
 

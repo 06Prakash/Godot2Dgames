@@ -175,6 +175,7 @@ func _on_StompingArea_area_entered(area: Area2D) -> void:
 		area.get_parent().stomped_hard()
 
 func _on_ProtectionTimer_timeout() -> void:
+	$PlayerSpeechArea/SpeechLayer.visible = false
 	protection_globe.visible = false
 	protected = false
 

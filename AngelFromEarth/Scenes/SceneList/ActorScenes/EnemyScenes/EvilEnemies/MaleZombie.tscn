@@ -51,11 +51,6 @@ extents = Vector2( 31.9838, 50.3206 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 29 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 36 ), ExtResource( 34 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "Idle",
@@ -70,6 +65,11 @@ animations = [ {
 "loop": true,
 "name": "Dead",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 36 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -81,7 +81,6 @@ extents = Vector2( 35.9243, 44.8081 )
 script = ExtResource( 41 )
 
 [node name="EnemyPhysicArea" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="ZombieImage" type="AnimatedSprite" parent="."]
@@ -89,12 +88,11 @@ position = Vector2( 1.86109, 35.0303 )
 scale = Vector2( 0.544033, 0.607479 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 7
+frame = 2
 playing = true
 offset = Vector2( 0, -70 )
 
 [node name="PlayerSpeechArea" parent="ZombieImage" instance=ExtResource( 45 )]
-visible = false
 position = Vector2( -6.80104, -174.075 )
 scale = Vector2( 0.7, 0.7 )
 
@@ -107,7 +105,6 @@ position = Vector2( -1.39691, -1.00786 )
 shape = SubResource( 3 )
 
 [node name="StompingArea" parent="." instance=ExtResource( 39 )]
-visible = false
 position = Vector2( 10.7922, -56.1203 )
 
 [node name="StompArea" parent="StompingArea" index="0"]
@@ -115,17 +112,16 @@ position = Vector2( -12.8221, 14.1293 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="BurnType2" parent="." instance=ExtResource( 40 )]
-visible = false
 
 [node name="FlameBurn" parent="BurnType2" index="0"]
 position = Vector2( 0.735102, 0 )
 scale = Vector2( 0.301743, 0.391688 )
+frame = 1
 
 [node name="RangeAttackSpot" parent="." groups=[
 "BurnType2",
 "zombie",
 ] instance=ExtResource( 42 )]
-visible = false
 
 [node name="Exploding" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 43 )

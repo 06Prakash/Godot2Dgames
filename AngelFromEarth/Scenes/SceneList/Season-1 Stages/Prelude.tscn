@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://Assets/Sounds/Musics/House/House_1.wav" type="AudioStream" id=1]
 [ext_resource path="res://Scenes/Scripts/AnimationScenes/Prelude.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/SceneList/Towns/SunVillage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/Information/Fonts/RobotoSlab-Bold.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/Sounds/Musics/House/House_1.wav" type="AudioStream" id=5]
 [ext_resource path="res://Scenes/SceneList/Menu Scenes/Popup/StoryAndObjectivePopup.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -76,7 +76,7 @@ Special Thanks to my Wife and Parents", "Thanks for downloading and supporting t
 [sub_resource type="DynamicFont" id=2]
 size = 72
 outline_size = 3
-outline_color = Color( 0.55098, 0.87451, 0.101961, 1 )
+outline_color = Color( 0.87451, 0.101961, 0.101961, 1 )
 extra_spacing_char = 2
 font_data = ExtResource( 4 )
 
@@ -94,7 +94,7 @@ anims/TitleAnimation = SubResource( 1 )
 position = Vector2( 330.797, 480.612 )
 
 [node name="LayerContainer" type="Node2D" parent="."]
-position = Vector2( 281.579, 35 )
+position = Vector2( 100, 35 )
 z_index = 1
 
 [node name="MainTitle" type="RichTextLabel" parent="LayerContainer"]
@@ -123,12 +123,6 @@ limit_bottom = 1100
 limit_smoothed = true
 smoothing_enabled = true
 
-[node name="Music" type="AudioStreamPlayer2D" parent="LayerContainer/MainTitle"]
-position = Vector2( -332.632, -69.7464 )
-stream = ExtResource( 5 )
-volume_db = 20.0
-autoplay = true
-
 [node name="CameraController" type="Timer" parent="."]
 wait_time = 4.0
 
@@ -141,7 +135,11 @@ position = Vector2( 126.718, 119.868 )
 position = Vector2( 655.286, 356.762 )
 limit_left = 0
 limit_top = 0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="finished" from="LayerContainer/MainTitle/Music" to="." method="_on_Music_finished"]
 [connection signal="timeout" from="CameraController" to="." method="_on_CameraController_timeout"]
 [connection signal="timeout" from="ScriptControlTimer" to="." method="_on_ScriptControlTimer_timeout"]
+[connection signal="finished" from="Music" to="." method="_on_Music_finished"]

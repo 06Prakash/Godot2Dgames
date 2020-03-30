@@ -9,17 +9,18 @@ const NEXT_STAGE : String= "res://Scenes/SceneList/Season-1 Stages/Stage6.tscn"
 var scripts = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music._stop_all_musics()
 	scripts = [
-		"BraveGirl: You killed that spider?",
-		"AgniPuthiran: No girl, It seems their species are in danger and our enemy is same!!",
-		"BraveGirl: So you let that go just like that?",
+		"BraveGirl: You defeated that spider?",
+		"AgniPuthiran: Yup, I also got some lead, It seems their species are in danger and our enemy is same!!",
+		"BraveGirl: So you let that giant spider go, just like that?",
 		"Agni's Father: Agni's decision won't be wrong, I guess there is no need to kill without reason",
-		"AgniPuthiran: Yes father, As per my discussion with that giant spider, their species are in danger",
+		"AgniPuthiran: Yes father, I had small conversation with that giant spider, and it is in need of our help to save its family",
 		"Agni's Father: So you are planning to save them",
 		"AgniPuthiran: Not only save them father, we may get the answer for these recent attacks on our village",
 		"Agni's Father: I agree to your point!! Our builders won't be able to fix the gates if we are getting attacks frequently",
 		"AgniPuthiran: Don't worry we are having a GIANT SUPPORT to handle them all",
-		"Agni's Father: You mean that Giant Spider turns out to be our ally??!!",
+		"Agni's Father: Wait, You mean that Giant Spider turns out to be our ally??!!",
 		"AgniPuthiran: Exactly!! It is very powerful and that will be able to protect this village, until I am back from my investigation",
 		"BraveGirl: I can also help you out in this investigation on that forest, Please let me check it first",
 		"AgniPuthiran: Ok, You are good at stealth right, I guess it is a good idea for you to go and check what is happening over there",

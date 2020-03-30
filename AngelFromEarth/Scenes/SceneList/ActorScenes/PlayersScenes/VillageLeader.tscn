@@ -57,9 +57,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 34 ), ExtResource( 8 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 51 ), ExtResource( 49 ), ExtResource( 35 ), ExtResource( 36 ) ],
 "loop": true,
-"name": "RunRight",
+"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 44 ), ExtResource( 43 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 20 ), ExtResource( 4 ), ExtResource( 19 ), ExtResource( 5 ) ],
@@ -67,19 +67,19 @@ animations = [ {
 "name": "Dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 51 ), ExtResource( 49 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"frames": [ ExtResource( 34 ), ExtResource( 8 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 29 ) ],
 "loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 15 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 64 ), ExtResource( 65 ) ],
-"loop": true,
-"name": "Attack",
+"name": "RunRight",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 52 ), ExtResource( 53 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 59 ), ExtResource( 32 ), ExtResource( 45 ), ExtResource( 33 ), ExtResource( 54 ), ExtResource( 50 ) ],
 "loop": true,
 "name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 15 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 66 ), ExtResource( 64 ), ExtResource( 65 ) ],
+"loop": true,
+"name": "Attack",
 "speed": 5.0
 } ]
 
@@ -155,7 +155,7 @@ MeleeAttackType1 = ExtResource( 1 )
 scale = Vector2( 0.498951, 0.576207 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
+frame = 2
 speed_scale = 2.0
 playing = true
 
@@ -210,6 +210,9 @@ scale = Vector2( 0.499, 0.576 )
 frames = SubResource( 6 )
 animation = "Attack"
 speed_scale = 2.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="SwordRangeArea" type="Area2D" parent="AttackSprite"]
 position = Vector2( 80, 16 )
@@ -221,6 +224,16 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackSprite/SwordRangeArea"]
 shape = SubResource( 7 )
 
+[node name="SwordRangeArea2" type="Area2D" parent="AttackSprite"]
+position = Vector2( -80, 16 )
+scale = Vector2( 2.00401, 1.73611 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackSprite/SwordRangeArea2"]
+shape = SubResource( 7 )
+
 [node name="ProgressBar" parent="." instance=ExtResource( 28 )]
 position = Vector2( -35.7995, -74.4629 )
 scale = Vector2( 0.149685, 0.115241 )
@@ -228,7 +241,6 @@ scale = Vector2( 0.149685, 0.115241 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PopupMenuControl" parent="CanvasLayer" instance=ExtResource( 24 )]
-visible = false
 margin_left = -0.51854
 margin_top = 1.11034
 margin_right = -0.518555
@@ -236,7 +248,6 @@ margin_bottom = 1.11035
 rect_pivot_offset = Vector2( 250, 250 )
 
 [node name="StoryAndObjectivePopup" parent="CanvasLayer" instance=ExtResource( 7 )]
-visible = false
 
 [node name="ProtectionTimer" type="Timer" parent="."]
 
@@ -251,11 +262,13 @@ texture = ExtResource( 31 )
 [node name="PlayerSpeechArea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5.05018, -69.9214 )
 scale = Vector2( 0.998, 1.152 )
+z_index = 1
 [connection signal="animation_finished" from="VillageLeader" to="." method="_on_BoyAnimation_animation_finished"]
 [connection signal="area_entered" from="StompingArea" to="." method="_on_StompingArea_area_entered"]
 [connection signal="timeout" from="MeleeAttackMaintainingTimer" to="." method="_on_MeleeAttackTimer_timeout"]
 [connection signal="animation_finished" from="LeaderAnimation" to="." method="_on_LeaderAnimation_animation_finished"]
 [connection signal="area_entered" from="AttackSprite/SwordRangeArea" to="." method="_on_SwordRangeArea_area_entered"]
+[connection signal="area_entered" from="AttackSprite/SwordRangeArea2" to="." method="_on_SwordRangeArea_area_entered"]
 [connection signal="pressed" from="CanvasLayer/StoryAndObjectivePopup/PopupPanel/VBoxContainer/CenterContainer/NextButtonPopup" to="." method="_on_NextButtonPopup_pressed"]
 [connection signal="timeout" from="ProtectionTimer" to="." method="_on_ProtectionTimer_timeout"]
 [connection signal="pressed" from="Controllers/CanvasLayer/Jump" to="." method="_on_Jump_pressed"]

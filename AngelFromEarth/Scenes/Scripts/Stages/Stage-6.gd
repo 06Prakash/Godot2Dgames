@@ -1,6 +1,6 @@
 extends Node2D
 
-const NEXT_STAGE: String = "res://Scenes/SceneList/Season-1 Stages/AnimatedStage2.tscn"
+const NEXT_STAGE: String = "res://Scenes/SceneList/Season-1 Stages/Stage7.tscn"
 onready var objective = $"Player/CanvasLayer/StoryAndObjectivePopup"
 
 
@@ -14,6 +14,7 @@ func get_camera_limits():
 	return [bottom_camera_limit, right_camera_limit]
 
 func _ready() -> void:
+	Music._stop_all_musics()
 	Music._play_music("dnb")
 	$"Portal".visible = true
 	$"Portal".play("Idle")

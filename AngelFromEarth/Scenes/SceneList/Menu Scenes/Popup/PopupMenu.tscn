@@ -84,17 +84,11 @@ position = Vector2( 269.814, 183.896 )
 
 [node name="AnimatedSprite" parent="Popup/AgniPuthiran" index="0"]
 position = Vector2( 1.50732, 4.52203 )
-frame = 2
+frame = 3
 playing = true
-
-[node name="Pointer" parent="Popup/AgniPuthiran/AnimatedSprite" index="0"]
-frame = 1
 
 [node name="BraveGirl" parent="Popup" instance=ExtResource( 3 )]
 position = Vector2( 272.829, 182.388 )
-
-[node name="Pointer" parent="Popup/BraveGirl/AnimatedSprite" index="0"]
-frame = 1
 [connection signal="pressed" from="Popup/Save Button" to="Popup/Save Button" method="_on_Save_Button_pressed"]
 [connection signal="pressed" from="Popup/NextStageButton" to="." method="_on_NextStageButton_pressed"]
 

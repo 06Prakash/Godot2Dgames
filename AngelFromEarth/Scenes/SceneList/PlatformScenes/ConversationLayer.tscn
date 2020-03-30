@@ -15,10 +15,10 @@ script = ExtResource( 2 )
 [node name="FadeIn" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-margin_left = 96.4333
-margin_top = 106.852
-margin_right = 1149.43
-margin_bottom = 261.852
+margin_left = 67.593
+margin_top = 52.7764
+margin_right = 1120.59
+margin_bottom = 207.776
 color = Color( 0.686275, 0.756863, 0.92549, 1 )
 __meta__ = {
 "_edit_group_": true,

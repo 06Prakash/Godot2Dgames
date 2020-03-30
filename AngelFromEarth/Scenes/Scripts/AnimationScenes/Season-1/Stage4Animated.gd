@@ -8,6 +8,7 @@ var shake_now_count
 var scripts
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music._stop_all_musics()
 	if(get_tree().paused):
 		get_tree().paused = false
 	$"ConversationLayer/CanvasLayer/FadeIn".show_behind_parent = true

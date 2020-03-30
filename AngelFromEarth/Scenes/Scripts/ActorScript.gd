@@ -209,7 +209,7 @@ func got_critical_hit() -> int:
 
 # Function to perform stomp operation
 func perform_stomped_hard_operation(score_points):
-	get_parent().get_node("Player").update_score(score_points)
+	get_tree().get_nodes_in_group("Hero")[0].update_score(score_points)
 	queue_free()
 
 ##############################################################################################
@@ -233,6 +233,7 @@ func zombie_threatening_msg():
 	$ZombieImage/PlayerSpeechArea/SpeechLayer.text = zombie_scripts[randi()%(zombie_scripts.size()-1)]	
 
 func update_speech_area(text_to_speak: String):
+	$PlayerSpeechArea/SpeechLayer.visible = true
 	$PlayerSpeechArea/SpeechLayer.text = text_to_speak
 
 #############################################################################################

@@ -13,6 +13,7 @@ var velocity = Vector2(100,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Music.play()
 	animation_player1.play("TitleAnimation")
 	scripts = ["This small village is the Sun village, It is named after Sun God, It was once a peaceful village but suddenly evil monsters started to appear near jungle",
 	"These creatures never dared to enter into this village and they will come only after sun set",
@@ -64,6 +65,7 @@ func _move_to_next_script() -> void:
 		popup_panel_instance._update_label(scripts[current_script])
 		script_timer.start(4)
 	else:
+		Music._stop_all_musics()
 		get_tree().change_scene(start_scene)
 
 func _on_CameraController_timeout() -> void:
@@ -82,10 +84,10 @@ func _on_CameraController_timeout() -> void:
 	script_timer.start(2)
 
 
-func _on_Music_finished() -> void:
-	$"LayerContainer/MainTitle/Music".play()
-
-
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	animation_player1.stop()
 	$"Position2D/Camera2D".current = true
+
+
+func _on_Music_finished() -> void:
+	$Music.play()
