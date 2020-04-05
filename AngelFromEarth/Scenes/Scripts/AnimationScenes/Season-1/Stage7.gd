@@ -1,6 +1,6 @@
 extends Node2D
 
-const NEXT_STAGE: String = "res://Scenes/Scripts/Menus/ExitScreen.tscn"
+const NEXT_STAGE: String = "res://Scenes/SceneList/Season-1 Stages/Stage8-AnimatedScene.tscn"
 onready var objective = $"Player/CanvasLayer/StoryAndObjectivePopup"
 
 func _get_next_scene() -> String:

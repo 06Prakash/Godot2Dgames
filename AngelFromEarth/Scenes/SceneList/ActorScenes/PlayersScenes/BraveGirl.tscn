@@ -64,14 +64,14 @@ animations = [ {
 "name": "Jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 8 ), ExtResource( 18 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "RunRight",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 8 ), ExtResource( 18 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "RunRight",
 "speed": 5.0
 } ]
 

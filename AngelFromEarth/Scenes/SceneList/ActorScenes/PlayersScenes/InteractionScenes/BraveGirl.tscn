@@ -20,9 +20,7 @@ scale = Vector2( 1.81408, 2.05026 )
 [node name="AnimatedSprite" parent="." index="0"]
 scale = Vector2( 1.00483, 0.970185 )
 frames = SubResource( 1 )
-animation = "Idle"
 
 [node name="Pointer" parent="AnimatedSprite" index="0"]
 position = Vector2( -7.31155, -106.408 )
 scale = Vector2( 0.624735, 0.596965 )
-frame = 0

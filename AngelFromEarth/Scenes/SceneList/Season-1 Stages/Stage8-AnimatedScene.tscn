@@ -1,0 +1,162 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/InteractionScenes/BraveGirl.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/SceneList/Portals/TravelPortal1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SceneList/ActorScenes/PlayersScenes/InteractionScenes/Reaper.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SceneList/Season-1 Stages/AnimatedSceneTemplate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Scripts/AnimationScenes/Season-1/Stage8-Animated.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/SceneList/PlatformScenes/WinterScene.tscn" type="PackedScene" id=6]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 100.0
+spread = 180.0
+flatness = 1.0
+
+[sub_resource type="ParticlesMaterial" id=2]
+next_pass = SubResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 87.82
+flag_disable_z = true
+gravity = Vector3( 0, 980, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="Stage8-AnimatedScene" instance=ExtResource( 4 )]
+script = ExtResource( 5 )
+
+[node name="WinterPlatform" parent="." index="0" instance=ExtResource( 6 )]
+position = Vector2( -4.84894, 3.09094 )
+z_index = -1
+
+[node name="FadeIn" parent="ConversationLayer/CanvasLayer" index="0"]
+margin_left = 1.75809
+margin_top = -1.75809
+margin_right = 1.75806
+margin_bottom = -1.75806
+
+[node name="ColorRect" parent="ConversationLayer/CanvasLayer" index="1"]
+margin_left = 179.349
+margin_top = 178.953
+margin_right = 1232.35
+margin_bottom = 333.953
+color = Color( 0.913725, 0.92549, 0.686275, 1 )
+
+[node name="BraveGirl" parent="." index="2" instance=ExtResource( 1 )]
+position = Vector2( 498.647, 685.139 )
+scale = Vector2( 1.55, 1.75 )
+
+[node name="Reaper" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 1052.46, 684.111 )
+rotation = -3.14159
+scale = Vector2( 0.8, -1 )
+
+[node name="Portal" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 210.815, 669.437 )
+z_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="." index="5"]
+position = Vector2( 692.169, 486.681 )
+current = true
+
+[node name="Particles2D" type="Particles2D" parent="." index="6"]
+position = Vector2( 257.673, 379.899 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D5" type="Particles2D" parent="." index="7"]
+position = Vector2( 257.673, 576.805 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D6" type="Particles2D" parent="." index="8"]
+position = Vector2( 465.128, 583.838 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D7" type="Particles2D" parent="." index="9"]
+position = Vector2( 667.308, 571.531 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D8" type="Particles2D" parent="." index="10"]
+position = Vector2( 867.73, 564.498 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D9" type="Particles2D" parent="." index="11"]
+position = Vector2( 1059.36, 557.466 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D10" type="Particles2D" parent="." index="12"]
+position = Vector2( 1054.09, 383.415 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D11" type="Particles2D" parent="." index="13"]
+position = Vector2( 250.641, 119.702 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D12" type="Particles2D" parent="." index="14"]
+position = Vector2( 444.966, 114.427 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D14" type="Particles2D" parent="." index="15"]
+position = Vector2( 655.937, 109.153 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D15" type="Particles2D" parent="." index="16"]
+position = Vector2( 863.391, 114.427 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D16" type="Particles2D" parent="." index="17"]
+position = Vector2( 1072.6, 112.669 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D17" type="Particles2D" parent="." index="18"]
+position = Vector2( 1288.85, 107.395 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D19" type="Particles2D" parent="." index="19"]
+position = Vector2( 1274.78, 297.269 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D20" type="Particles2D" parent="." index="20"]
+position = Vector2( 1283.57, 506.481 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D21" type="Particles2D" parent="." index="21"]
+position = Vector2( 1283.57, 506.481 )
+rotation = 0.0475282
+process_material = SubResource( 2 )
+
+[node name="Particles2D23" type="Particles2D" parent="." index="22"]
+position = Vector2( 1346.87, 691.081 )
+rotation = 0.0475282
+process_material = SubResource( 2 )
+
+[node name="Particles2D24" type="Particles2D" parent="." index="23"]
+position = Vector2( 1485.75, 506.481 )
+rotation = 0.0475282
+process_material = SubResource( 2 )
+
+[node name="Particles2D22" type="Particles2D" parent="." index="24"]
+position = Vector2( 1485.75, 313.091 )
+rotation = 0.0475282
+process_material = SubResource( 2 )
+
+[node name="Particles2D18" type="Particles2D" parent="." index="25"]
+position = Vector2( 1492.79, 105.637 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D13" type="Particles2D" parent="." index="26"]
+position = Vector2( 1, 0 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D2" type="Particles2D" parent="." index="27"]
+position = Vector2( 857.182, 386.931 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D3" type="Particles2D" parent="." index="28"]
+position = Vector2( 660.276, 371.109 )
+process_material = SubResource( 2 )
+
+[node name="Particles2D4" type="Particles2D" parent="." index="29"]
+position = Vector2( 459.853, 388.69 )
+process_material = SubResource( 2 )
+
+[editable path="ConversationLayer"]
